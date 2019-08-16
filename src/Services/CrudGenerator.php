@@ -42,7 +42,9 @@ class CrudGenerator
      */
     public function getStub($type)
     {
-        return file_get_contents(resource_path("stubs/$type.stub"));
+        $path = __DIR__ . '/../stubs/' . "$type.stub";
+//        return file_get_contents(resource_path("stubs/$type.stub"));
+        return file_get_contents($path);
     }
 
     /**
