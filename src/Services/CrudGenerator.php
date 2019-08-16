@@ -8,6 +8,7 @@
  */
 namespace Muhaimenul\Laracrud\Services;
 
+use File;
 class CrudGenerator
 {
     protected $name;
@@ -27,7 +28,11 @@ class CrudGenerator
      */
 
     public function generate() {
-
+//        $name = $this->name;
+        $this->model();
+        $this->controller();
+        $this->request();
+        $this->routes();
     }
 
     /**
@@ -90,6 +95,11 @@ class CrudGenerator
         if(!file_exists($path = app_path('/Http/Requests')))
             mkdir($path, 0777, true);
         file_put_contents(app_path("/Http/Requests/{$name}Request.php"), $requestTemplate);
+    }
+
+    protected function routes(){
+        $name = $this->name;
+        File::append(base_path('routes/api.php'), 'Route::resource(\'' . str_plural(strtolower($name)) . "', '{$name}Controller');");
     }
 
     protected function migration()
