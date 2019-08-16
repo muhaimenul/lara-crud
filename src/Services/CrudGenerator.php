@@ -41,6 +41,20 @@ class CrudGenerator
     }
 
     /**
+     * generate model
+     */
+
+    protected function model() {
+        $name = $this->name;
+        $modelTemplate = str_replace(
+            ['{{modelName}}'],
+            [$name],
+            $this->getStub('Model')
+        );
+        file_put_contents(app_path("/{$name}.php"), $modelTemplate);
+    }
+
+    /**
      * generate controller
      */
 
@@ -60,10 +74,6 @@ class CrudGenerator
             $this->getStub('Controller')
         );
         file_put_contents(app_path("/Http/Controllers/{$name}Controller.php"), $controllerTemplate);
-    }
-
-    protected function model() {
-
     }
 
     protected function request()
