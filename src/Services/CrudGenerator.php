@@ -76,9 +76,20 @@ class CrudGenerator
         file_put_contents(app_path("/Http/Controllers/{$name}Controller.php"), $controllerTemplate);
     }
 
+    /**
+     * generate request
+     */
     protected function request()
     {
-
+        $name = $this->name;
+        $requestTemplate = str_replace(
+            ['{{modelName}}'],
+            [$name],
+            $this->getStub('Request')
+        );
+        if(!file_exists($path = app_path('/Http/Requests')))
+            mkdir($path, 0777, true);
+        file_put_contents(app_path("/Http/Requests/{$name}Request.php"), $requestTemplate);
     }
 
     protected function migration()
