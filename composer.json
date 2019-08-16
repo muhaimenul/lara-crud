@@ -19,6 +19,7 @@
             "Muhaimenul\\Laracrud\\": "src/"
         }
     },
+    "minimum-stability": "dev",
     "extra": {
         "laravel": {
             "providers": [
