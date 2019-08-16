@@ -1,0 +1,29 @@
+{
+    "name": "muhaimenul/lara-crud",
+    "description": "This Generator package provides generators like CRUD, API, Controller, Model, Migration for your painless development of your applications.",
+    "keywords": ["laravel", "generator", "crud", "mvc", "controller", "model", "routes", "muhaimenul", "laracrud"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Muhaimenul Islam",
+            "email": "i.muhaimen@gmail.com",
+            "homepage": "https://github.com/muhaimenul",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "laravel/framework": ">=4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Muhaimenul\\Laracrud\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Muhaimenul\\Laracrud\\LaracrudServiceProvider"
+            ]
+        }
+    }
+}
