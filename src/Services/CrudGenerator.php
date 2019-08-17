@@ -126,7 +126,12 @@ class CrudGenerator
             ],
             $this->getStub('Migration')
         );
-        file_put_contents(database_path("/migrations/{$name}Request.php"), $migrationTemplate);
+
+//        $name = str_replace($this->laravel->getNamespace(), '', $name);
+        $datePrefix = date('Y_m_d_His');
+//        database_path('/migrations/') . $datePrefix . '_create_' . $name . '_table.php';
+
+        file_put_contents(database_path("/migrations/{$datePrefix}_create_{$tableName}_table.php"), $migrationTemplate);
     }
 
     protected function view(){
