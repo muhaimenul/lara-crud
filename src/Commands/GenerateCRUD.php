@@ -19,7 +19,7 @@ class GenerateCRUD extends Command
      *
      * @var string
      */
-    protected $signature = 'generate:crud
+    protected $signature = 'make:crud
         {name : Class (singular) for example User}';
 
     /**
@@ -47,7 +47,7 @@ class GenerateCRUD extends Command
     public function handle()
     {
         $name = $this->argument('name');
-        $crudGnt = new CrudGenerator($name);
+        $crudGnt = app()->makeWith(CrudGenerator::class, ['name' => $name]);
         $crudGnt->generate();
     }
 

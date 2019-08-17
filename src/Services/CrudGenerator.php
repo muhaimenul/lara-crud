@@ -9,6 +9,7 @@
 namespace Muhaimenul\Laracrud\Services;
 
 use File;
+
 class CrudGenerator
 {
     protected $name;
@@ -100,12 +101,18 @@ class CrudGenerator
         file_put_contents(app_path("/Http/Requests/{$name}Request.php"), $requestTemplate);
     }
 
+    /**
+     * generate web and api resource routes
+     */
     protected function routes(){
         $name = $this->name;
         File::append(base_path('routes/api.php'), 'Route::resource(\'' . str_plural(strtolower($name)) . "', '{$name}Controller');\n");
         File::append(base_path('routes/web.php'), 'Route::resource(\'' . str_plural(strtolower($name)) . "', '{$name}Controller');\n");
     }
 
+    /**
+     * generate migration
+     */
     protected function migration()
     {
         $name = $this->name;
@@ -130,7 +137,6 @@ class CrudGenerator
 //        $name = str_replace($this->laravel->getNamespace(), '', $name);
         $datePrefix = date('Y_m_d_His');
 //        database_path('/migrations/') . $datePrefix . '_create_' . $name . '_table.php';
-
         file_put_contents(database_path("/migrations/{$datePrefix}_create_{$tableName}_table.php"), $migrationTemplate);
     }
 
