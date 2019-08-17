@@ -33,6 +33,7 @@ class CrudGenerator
         $this->controller();
         $this->request();
         $this->routes();
+        $this->migration();
     }
 
     /**
@@ -101,12 +102,31 @@ class CrudGenerator
 
     protected function routes(){
         $name = $this->name;
-        File::append(base_path('routes/api.php'), 'Route::resource(\'' . str_plural(strtolower($name)) . "', '{$name}Controller');");
+        File::append(base_path('routes/api.php'), 'Route::resource(\'' . str_plural(strtolower($name)) . "', '{$name}Controller');\n");
+        File::append(base_path('routes/web.php'), 'Route::resource(\'' . str_plural(strtolower($name)) . "', '{$name}Controller');\n");
     }
 
     protected function migration()
     {
+        $name = $this->name;
+        $migrationName = str_plural(snake_case($name));
+        $tableName = $migrationName;
 
+        $className = ucwords(str_plural($name));
+//        $className = 'Create' . str_replace(' ', '', ucwords(str_replace('_', ' ', $tableName))) . 'Table';
+
+        $migrationTemplate = str_replace(
+            [
+                '{{tableName}}',
+                '{{className}}'
+            ],
+            [
+                $tableName,
+                $className
+            ],
+            $this->getStub('Migration')
+        );
+        file_put_contents(database_path("/migrations/{$name}Request.php"), $migrationTemplate);
     }
 
     protected function view(){
