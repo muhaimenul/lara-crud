@@ -2,6 +2,22 @@
 
 ## About LaraCRUD (Laravel CRUD Generator)
 
+Laravel CRUD generator package for easily generate your Model, Controller, Routes, APIs, request, migration etc. to make your development process painless. Single command will create your Model, Controller, Request and Migrations files.
+
+## Installation
+
+You can install the package via composer:
+```bash
+composer require muhaimenul/lara-crud
+```
+
+## Usage
+
+Easily generate your crud instance using the ``make:crud`` command:
+```bash
+php artisan make:crud Flight
+```
+
 ## Contributing
 
 [Muhaimenul Islam](https://github.com/muhaimenul)
