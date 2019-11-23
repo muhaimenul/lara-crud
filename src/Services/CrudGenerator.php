@@ -60,7 +60,7 @@ class CrudGenerator
             [$name],
             $this->getStub('Model')
         );
-        file_put_contents(app_path("/{$name}.php"), $modelTemplate);
+        file_put_contents(app_path("/Models/{$name}.php"), $modelTemplate);
     }
 
     /**
