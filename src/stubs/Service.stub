@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Services;
+
+use Muhaimenul\Laracrud\Services\Service;
+
+class {{modelName}} extends Service
+{
+    /**
+	 * Repository Instance
+	 * @var $repository
+	 */
+
+    protected $repository;
+
+    /**
+	 * Sets a new repository instance
+	 */
+    public function __construct()
+	{
+
+	}
+}
