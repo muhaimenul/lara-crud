@@ -52,7 +52,21 @@ class GenerateCRUD extends Command
         $crudGntSvc = app()->makeWith(CrudGenerator::class, ['name' => $name]);
         $crudGntSvc->generate();
 
-        // 
+        // option == all 
+
+        // option == s service only
+        // option == r repository only
+
+        switch ($option) {
+            case 'all': 
+                break;
+            case 's': 
+                break;
+            case 'r': 
+                break;
+            default: 
+        }
+        
     }
 
 }
