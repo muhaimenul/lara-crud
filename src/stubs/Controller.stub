@@ -7,6 +7,21 @@ use App\{{modelName}};
 
 class {{modelName}}Controller extends Controller
 {
+    /**
+	 * Service Instance
+	 * @var $service
+	 */
+
+    protected $service;
+
+    /**
+	 * Sets a new service instance
+	 */
+    public function __construct()
+	{
+
+	}
+    
     public function index()
     {
         ${{modelNamePluralLowerCase}} = {{modelName}}::latest()->get();
