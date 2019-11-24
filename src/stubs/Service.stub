@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Muhaimenul\Laracrud\Services\Service;
 
-class {{modelName}} extends Service
+class {{modelName}}Service extends Service
 {
     /**
 	 * Repository Instance

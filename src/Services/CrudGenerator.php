@@ -165,6 +165,21 @@ class CrudGenerator
         file_put_contents(app_path("/Services/{$name}.php"), $serviceTemplate);
     }
 
+    protected function repository() {
+        $name = $this->name;
+        $repositoryTemplate = str_replace(
+            ['{{modelName}}'],
+            [$name],
+            $this->getStub('Repository')
+        );
+
+        if (!file_exists(app_path('/Repositories'))) {
+            mkdir(app_path('/Repositories'), 0777, true);
+        }
+
+        file_put_contents(app_path("/Repositories/{$name}.php"), $repositoryTemplate);
+    }
+
     protected function view(){
 
     }
