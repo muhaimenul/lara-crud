@@ -36,6 +36,7 @@ class CrudGenerator
         $this->routes();
         $this->migration();
         $this->service();
+        $this->repository();
     }
 
     /**
@@ -162,7 +163,7 @@ class CrudGenerator
             mkdir(app_path('/Services'), 0777, true);
         }
 
-        file_put_contents(app_path("/Services/{$name}.php"), $serviceTemplate);
+        file_put_contents(app_path("/Services/{$name}Service.php"), $serviceTemplate);
     }
 
     protected function repository() {
@@ -177,7 +178,7 @@ class CrudGenerator
             mkdir(app_path('/Repositories'), 0777, true);
         }
 
-        file_put_contents(app_path("/Repositories/{$name}.php"), $repositoryTemplate);
+        file_put_contents(app_path("/Repositories/{$name}Repository.php"), $repositoryTemplate);
     }
 
     protected function view(){
