@@ -61,6 +61,11 @@ class CrudGenerator
             [$name],
             $this->getStub('Model')
         );
+
+        if (!file_exists(app_path('/Models'))) {
+            mkdir(app_path('/Models'), 0777, true);
+        }
+        
         file_put_contents(app_path("/Models/{$name}.php"), $modelTemplate);
     }
 
@@ -152,6 +157,11 @@ class CrudGenerator
             [$name],
             $this->getStub('Service')
         );
+
+        if (!file_exists(app_path('/Services'))) {
+            mkdir(app_path('/Services'), 0777, true);
+        }
+
         file_put_contents(app_path("/Services/{$name}.php"), $serviceTemplate);
     }
 
