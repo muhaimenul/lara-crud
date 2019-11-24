@@ -35,6 +35,7 @@ class CrudGenerator
         $this->request();
         $this->routes();
         $this->migration();
+        $this->service();
     }
 
     /**
@@ -138,6 +139,20 @@ class CrudGenerator
         $datePrefix = date('Y_m_d_His');
 //        database_path('/migrations/') . $datePrefix . '_create_' . $name . '_table.php';
         file_put_contents(database_path("/migrations/{$datePrefix}_create_{$tableName}_table.php"), $migrationTemplate);
+    }
+
+    /**
+     * generate service
+     */
+
+    protected function service() {
+        $name = $this->name;
+        $serviceTemplate = str_replace(
+            ['{{modelName}}'],
+            [$name],
+            $this->getStub('Service')
+        );
+        file_put_contents(app_path("/Services/{$name}.php"), $serviceTemplate);
     }
 
     protected function view(){
