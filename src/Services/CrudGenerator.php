@@ -24,7 +24,7 @@ class CrudGenerator
         $this->name = $name;
     }
 
-    
+
     /**
      * generate crud related files
      * generate all
@@ -38,6 +38,33 @@ class CrudGenerator
         $this->routes();
         $this->migration();
         $this->service();
+        $this->repository();
+    }
+
+    /**
+     * generate crud related files
+     * generate all
+     */
+
+    public function generateBasic() {
+        $this->model();
+        $this->controller();
+        $this->request();
+        $this->routes();
+        $this->migration();
+    }
+
+    /**
+     * generate service only
+     */
+    public function generateService() {
+        $this->service();
+    }
+
+    /**
+     * generate repository only
+     */
+    public function generateRepository() {
         $this->repository();
     }
 
