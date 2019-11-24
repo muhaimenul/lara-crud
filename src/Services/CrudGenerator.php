@@ -24,8 +24,10 @@ class CrudGenerator
         $this->name = $name;
     }
 
+    
     /**
      * generate crud related files
+     * generate all
      */
 
     public function generate() {

@@ -20,7 +20,8 @@ class GenerateCRUD extends Command
      * @var string
      */
     protected $signature = 'make:crud
-        {name : Class (singular) for example User}';
+        {name : Class (singular) for example User}
+        {option? : Optional arguments to generate specific file}';
 
     /**
      * The console command description.
@@ -47,8 +48,11 @@ class GenerateCRUD extends Command
     public function handle()
     {
         $name = $this->argument('name');
-        $crudGnt = app()->makeWith(CrudGenerator::class, ['name' => $name]);
-        $crudGnt->generate();
+        $option = $this->argument('option');
+        $crudGntSvc = app()->makeWith(CrudGenerator::class, ['name' => $name]);
+        $crudGntSvc->generate();
+
+        // 
     }
 
 }
