@@ -68,7 +68,7 @@ class GenerateCRUD extends Command
                 $crudGntSvc->generateRepository();
                 break;
             default:
-                $crudGntSvc->generateService();
+                $crudGntSvc->generateBasic();
         }
         
     }
