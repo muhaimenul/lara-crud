@@ -2,22 +2,16 @@
 
 namespace App\Repositories;
 
-use Muhaimenul\Laracrud\Services\Service;
+use Muhaimenul\Laracrud\Repositories\Repository;
+use App\Models\{{modelName}};
 
-class {{modelName}} extends Service
+class {{modelName}}Repository extends Repository
 {
     /**
-	 * Repository Instance
-	 * @var $repository
-	 */
-
-    protected $repository;
-
-    /**
-	 * Sets a new repository instance
-	 */
-    public function __construct()
-	{
-
-	}
+     * @return string
+     */
+    protected function setModel() : string
+    {
+        return User::class;
+    }
 }
