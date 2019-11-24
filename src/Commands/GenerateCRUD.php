@@ -50,7 +50,7 @@ class GenerateCRUD extends Command
         $name = $this->argument('name');
         $option = $this->argument('option');
         $crudGntSvc = app()->makeWith(CrudGenerator::class, ['name' => $name]);
-        $crudGntSvc->generate();
+        
 
         // option == all 
 
@@ -58,13 +58,17 @@ class GenerateCRUD extends Command
         // option == r repository only
 
         switch ($option) {
-            case 'all': 
+            case 'all':
+                $crudGntSvc->generate();
                 break;
-            case 's': 
+            case 's':
+                $crudGntSvc->generateService();
                 break;
             case 'r': 
+                $crudGntSvc->generateRepository();
                 break;
-            default: 
+            default:
+                $crudGntSvc->generateService();
         }
         
     }
