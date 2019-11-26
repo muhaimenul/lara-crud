@@ -8,14 +8,16 @@ class {{modelName}}Service extends Service
 {
     /**
 	 * Repository Instance
-	 * @var $repository
+	 * @var ${{modelName}}Repo
 	 */
 
     protected $repository;
 
     /**
 	 * Sets a new repository instance
-	 */
+     * TransactionService constructor.
+     * @param {{modelName}}Repository ${{modelName}}Repo
+     */
     public function __construct()
 	{
 
