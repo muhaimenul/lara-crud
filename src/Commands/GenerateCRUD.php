@@ -28,7 +28,7 @@ class GenerateCRUD extends Command
      *
      * @var string
      */
-    protected $description = 'Generate Crud including controller, model, views & migrations.';
+    protected $description = 'Generate CRUD boilerplate including controller, model, routes & migrations.';
 
     /**
      * Create a new command instance.
