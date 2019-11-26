@@ -12,6 +12,6 @@ class {{modelName}}Repository extends Repository
      */
     protected function setModel() : string
     {
-        return User::class;
+        return {{modelName}}::class;
     }
 }
