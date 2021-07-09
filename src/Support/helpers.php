@@ -45,3 +45,9 @@ if(!function_exists('string_plural')) {
         \Illuminate\Support\Str::plural($string);
     }
 }
+
+if(!function_exists('string_snake')) {
+    function string_snake($string) {
+        \Illuminate\Support\Str::snake($string);
+    }
+}

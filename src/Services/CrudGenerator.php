@@ -152,7 +152,7 @@ class CrudGenerator
     protected function migration()
     {
         $name = $this->name;
-        $migrationName = string_plural(snake_case($name));
+        $migrationName = string_plural(string_snake($name));
         $tableName = $migrationName;
 
         $className = ucwords(string_plural($name));
