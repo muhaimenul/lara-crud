@@ -19,7 +19,10 @@
     "autoload": {
         "psr-4": {
             "Muhaimenul\\Laracrud\\": "src/"
-        }
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
     },
     "extra": {
         "laravel": {
