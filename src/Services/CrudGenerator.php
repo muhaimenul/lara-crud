@@ -113,7 +113,7 @@ class CrudGenerator
             ],
             [
                 $name,
-                strtolower(str_plural($name)),
+                strtolower(string_plural($name)),
                 strtolower($name)
             ],
             $this->getStub('Controller')
@@ -142,8 +142,8 @@ class CrudGenerator
      */
     protected function routes(){
         $name = $this->name;
-        File::append(base_path('routes/api.php'), 'Route::resource(\'' . str_plural(strtolower($name)) . "', '{$name}Controller');\n");
-        File::append(base_path('routes/web.php'), 'Route::resource(\'' . str_plural(strtolower($name)) . "', '{$name}Controller');\n");
+        File::append(base_path('routes/api.php'), 'Route::resource(\'' . string_plural(strtolower($name)) . "', '{$name}Controller');\n");
+        File::append(base_path('routes/web.php'), 'Route::resource(\'' . string_plural(strtolower($name)) . "', '{$name}Controller');\n");
     }
 
     /**
@@ -152,10 +152,10 @@ class CrudGenerator
     protected function migration()
     {
         $name = $this->name;
-        $migrationName = str_plural(snake_case($name));
+        $migrationName = string_plural(snake_case($name));
         $tableName = $migrationName;
 
-        $className = ucwords(str_plural($name));
+        $className = ucwords(string_plural($name));
 //        $className = 'Create' . str_replace(' ', '', ucwords(str_replace('_', ' ', $tableName))) . 'Table';
 
         $migrationTemplate = str_replace(

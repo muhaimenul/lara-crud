@@ -47,4 +47,16 @@ class LaracrudServiceProvider extends ServiceProvider
             'Muhaimenul\Laracrud\Commands\GenerateCRUD'
         );
     }
+
+//    /**
+//     * Register helpers file
+//     */
+//    public function registerHelpers()
+//    {
+//        // Load the helpers in app/Http/helpers.php
+//        if (file_exists($file = app_path('Http/helpers.php')))
+//        {
+//            require $file;
+//        }
+//    }
 }
