@@ -2,9 +2,10 @@
 
 namespace App\Services;
 
-use Muhaimenul\Laracrud\Services\Service;
+use Muhaimenul\Laracrud\Services\ResourceService;
+use App\Models\{{modelName}};
 
-class {{modelName}}Service extends Service
+class {{modelName}}Service extends ResourceService
 {
     /**
 	 * Repository Instance
@@ -15,11 +16,25 @@ class {{modelName}}Service extends Service
 
     /**
 	 * Sets a new repository instance
-     * TransactionService constructor.
+	 *
+     * ModelService constructor.
      * @param {{modelName}}Repository ${{modelName}}Repo
      */
     public function __construct()
 	{
-
+	    // needed for repository pattern
+        //parent::__construct();
 	}
+
+    /**
+	 * Sets a new model instance for ResourceService
+	 *
+     * ModelService constructor.
+     * @param {{modelName}}Repository ${{modelName}}Repo
+     */
+     public function setModel()
+    {
+        $this->model = new ${{modelName}}();
+    }
+
 }
