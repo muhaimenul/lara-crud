@@ -1,7 +1,7 @@
 <h1 align="center">LaraCRUD</h1>
 
 [![Awesome Laravel](https://img.shields.io/badge/Awesome-Laravel-brightgreen.svg)](https://github.com/muhaimenul/lara-crud)
-[![GitHub license](https://img.shields.io/badge/license-CC0-blue.svg)](https://raw.githubusercontent.com/muhaimenul/lara-crud/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-orange.svg)](https://raw.githubusercontent.com/muhaimenul/lara-crud/master/LICENSE)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/muhaimenul/lara-crud.svg?style=flat-square)](https://packagist.org/packages/muhaimenul/lara-search)
 
 ## About LaraCRUD (Laravel CRUD Generator)
