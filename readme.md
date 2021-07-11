@@ -1,5 +1,9 @@
 <h1 align="center">LaraCRUD</h1>
 
+[![Awesome Laravel](https://img.shields.io/badge/Awesome-Laravel-brightgreen.svg)](https://github.com/muhaimenul/lara-crud)
+[![GitHub license](https://img.shields.io/badge/license-CC0-blue.svg)](https://raw.githubusercontent.com/muhaimenul/lara-crud/master/LICENSE)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/muhaimenul/lara-crud.svg?style=flat-square)](https://packagist.org/packages/muhaimenul/lara-search)
+
 ## About LaraCRUD (Laravel CRUD Generator)
 
 Laravel CRUD generator package for easily generate your Model, Controller, Routes, APIs, request, migration etc. to make your development process painless. Single command will create your Model, Controller, Request and Migrations files.

@@ -21,7 +21,7 @@ class GenerateCRUD extends Command
      */
     protected $signature = 'make:crud
         {name : Class (singular) for example User}
-        {option? : Optional arguments to generate specific file}';
+        {option? : Optional arguments to generate specific class file}';
 
     /**
      * The console command description.
