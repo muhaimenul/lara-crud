@@ -42,12 +42,12 @@ if(!function_exists('isUrl')) {
 
 if(!function_exists('string_plural')) {
     function string_plural($string) {
-        \Illuminate\Support\Str::plural($string);
+        return \Illuminate\Support\Str::plural($string);
     }
 }
 
 if(!function_exists('string_snake')) {
     function string_snake($string) {
-        \Illuminate\Support\Str::snake($string);
+        return \Illuminate\Support\Str::snake($string);
     }
 }
